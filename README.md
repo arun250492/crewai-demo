@@ -20,6 +20,38 @@ This project demonstrates how to use [CrewAI](https://github.com/joaomdmoura/cre
 - **Python 3.10-3.12** (Recommended: Python 3.12)
 - **pip** (Python package manager)
 - **Microsoft C++ Build Tools** (Windows only, for some dependencies)
+- **OpenAI API Key** (for agent LLM access)
+
+---
+
+## Getting an OpenAI API Key
+
+1. Go to [OpenAI Platform](https://platform.openai.com/signup) and sign up or log in.
+2. Navigate to your [API Keys page](https://platform.openai.com/api-keys).
+3. Click **Create new secret key** and copy the generated key.
+
+**Keep your API key safe and do not share it publicly.**
+
+---
+
+## Setting Your OpenAI API Key
+
+Set your API key as an environment variable so CrewAI and its agents can access it.
+
+- **Windows (Command Prompt):**
+  ```cmd
+  set OPENAI_API_KEY=your-api-key-here
+  ```
+- **Windows (PowerShell):**
+  ```powershell
+  $env:OPENAI_API_KEY="your-api-key-here"
+  ```
+- **macOS/Linux:**
+  ```bash
+  export OPENAI_API_KEY=your-api-key-here
+  ```
+
+You can also add this line to your `.env` file if your project uses [python-dotenv](https://pypi.org/project/python-dotenv/).
 
 ---
 
@@ -59,3 +91,15 @@ pip install -r requirements.txt
 > **Note:**  
 > If you see errors about `Microsoft Visual C++ 14.0 or greater is required`, [download and install Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) and restart your terminal.
 
+---
+
+## Usage
+
+1. **Set your OpenAI API key** as described above.
+2. Run the main script:
+
+```bash
+python crew.py
+```
+
+This will start the crew, execute the research and writing tasks,
